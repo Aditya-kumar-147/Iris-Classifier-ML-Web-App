@@ -3,7 +3,7 @@ import pickle
 
 lin_model=pickle.load(open('lin_model.pkl','rb'))
 log_model=pickle.load(open('log_model.pkl','rb'))
-svc_model=pickle.load(open('svc_model.pkl','rb'))
+#svc_model=pickle.load(open('svc_model.pkl','rb'))
 
 def classify(num):
     if num < 0.5:
@@ -21,7 +21,7 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-    activities=['Linear Regression','Logistic Regression','SVM']
+    activities=['Linear Regression','Logistic Regression']
     option=st.sidebar.selectbox('Select the model',activities)
     st.subheader(option)
     st.spinner("Hello")
@@ -33,10 +33,10 @@ def main():
     if st.button('Classify'):#button name is Classify
         if option == 'Linear Regression':
             st.success(classify(lin_model.predict(inputs)))
-        elif option == 'Logistic Regression':
+        else option == 'Logistic Regression':
             st.success(classify(log_model.predict(inputs)))
-        else:
-            st.success(classify(svc_model.predict(inputs)))
+        #else:
+            #st.success(classify(svc_model.predict(inputs)))
             
 if __name__=='__main__':
     main()
