@@ -33,7 +33,7 @@ def main():
     if st.button('Classify'):#button name is Classify
         if option == 'Linear Regression':
             st.success(classify(lin_model.predict(inputs)))
-        else option == 'Logistic Regression':
+        else:
             st.success(classify(log_model.predict(inputs)))
         #else:
             #st.success(classify(svc_model.predict(inputs)))
