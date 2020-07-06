@@ -11,7 +11,7 @@ y=iris.target
 x_train,x_test,y_train,y_test=train_test_split(x,y)
 lin_reg=LinearRegression()
 log_reg=LogisticRegression()
-svc_model=SVC()
+svc_model=SVC(probability=True)
 #train model
 lin_reg=lin_reg.fit(x_train,y_train)
 log_reg=log_reg.fit(x_train,y_train)
