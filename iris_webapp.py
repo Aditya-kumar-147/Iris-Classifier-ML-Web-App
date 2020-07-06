@@ -35,8 +35,6 @@ def main():
             st.success(classify(lin_model.predict(inputs)))
         else:
             st.success(classify(log_model.predict(inputs)))
-        #else:
-            #st.success(classify(svc_model.predict(inputs)))
             
 if __name__=='__main__':
     main()
